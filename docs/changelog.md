@@ -3,30 +3,30 @@ Changelog
 
 This changelog describes major feature additions. Please view the `releases` page for more details on commits and minor changes.
 
-### :octicons-tag-24: [`v2.29.0`](https://github.com/vektra/mockery/releases/tag/v2.29.0) template functions
+### :octicons-tag-24: [`v2.29.0`](https://github.com/rhzs/mockery/releases/tag/v2.29.0) template functions
 
 This release adds a large number of template functions available for use in the `packages` templating engine.
 
-### :octicons-tag-24: [`v2.25.0`](https://github.com/vektra/mockery/releases/tag/v2.25.0) `recursive` config
+### :octicons-tag-24: [`v2.25.0`](https://github.com/rhzs/mockery/releases/tag/v2.25.0) `recursive` config
 
 The `recursive` parameter allows mockery to dynamically discover sub-packages when using the `packages` config.
 
-### :octicons-tag-24: [`v2.24.0`](https://github.com/vektra/mockery/releases/tag/v2.24.0) `exclude` config
+### :octicons-tag-24: [`v2.24.0`](https://github.com/rhzs/mockery/releases/tag/v2.24.0) `exclude` config
 
 The `exclude` parameter allows you to define subpaths to ignore. This is currently only compatible when using non-`packages` config.
 
-### :octicons-tag-24: [`v2.23.0`](https://github.com/vektra/mockery/releases/tag/v2.23.0) Replace Types
+### :octicons-tag-24: [`v2.23.0`](https://github.com/rhzs/mockery/releases/tag/v2.23.0) Replace Types
 
 The `replace-type` parameter allows adding a list of type replacements to be made in package and/or type names.
 This can help overcome issues like usage of type aliases that point to internal packages.
 
-### :octicons-tag-24: [`v2.21.0`](https://github.com/vektra/mockery/releases/tag/v2.21.0): `#!yaml packages` configuration
+### :octicons-tag-24: [`v2.21.0`](https://github.com/rhzs/mockery/releases/tag/v2.21.0): `#!yaml packages` configuration
 
 In this version we release the `#!yaml packages` configuration section. This new parameter allows defining specific packages to generate mocks for, while also giving fine-grained control over which interfaces are mocked, where they are located, and how they are configured. Details are provided [here](features.md#packages-configuration).
 
-Community input is desired before we consider deprecations of dynamic walking (via `#!yaml all: True`): https://github.com/vektra/mockery/discussions/549
+Community input is desired before we consider deprecations of dynamic walking (via `#!yaml all: True`): https://github.com/rhzs/mockery/discussions/549
 
-### :octicons-tag-24: [`v2.20.0`](https://github.com/vektra/mockery/pull/538): Improved Return Value Functions
+### :octicons-tag-24: [`v2.20.0`](https://github.com/rhzs/mockery/pull/538): Improved Return Value Functions
 
 Return value functions that return an entire method's return value signature can now be provided.
 
@@ -55,20 +55,20 @@ Return(
 )
 ```
 
-### :octicons-tag-24: [`2.19.0`](https://github.com/vektra/mockery/releases/tag/v2.19.0): `inpackage-suffix` option
+### :octicons-tag-24: [`2.19.0`](https://github.com/rhzs/mockery/releases/tag/v2.19.0): `inpackage-suffix` option
 
 When `inpackage-suffix` is set to `True`, mock files are suffixed with `_mock` instead of being prefixed with `mock_` for InPackage mocks
 
 
-### :octicons-tag-24: [`v2.16.0`](https://github.com/vektra/mockery/pull/527): Config Search Path
+### :octicons-tag-24: [`v2.16.0`](https://github.com/rhzs/mockery/pull/527): Config Search Path
 
 Mockery will iteratively search every directory from the current working directory up to the root path for a `.mockery.yaml` file, if one is not explicitly provided.
 
-### :octicons-tag-24: [`v2.13.0`](https://github.com/vektra/mockery/pull/456): Generics support
+### :octicons-tag-24: [`v2.13.0`](https://github.com/rhzs/mockery/pull/456): Generics support
 
 Mocks are now capable of supporting Golang generics.
 
-### :octicons-tag-24: [`v2.11.0`](https://github.com/vektra/mockery/pull/406): Mock constructors
+### :octicons-tag-24: [`v2.11.0`](https://github.com/rhzs/mockery/pull/406): Mock constructors
 
 Mockery v2.11 introduces constructors for all mocks. This makes instantiation and mock registration a bit easier and
 less error-prone (you won't have to worry about forgetting the `AssertExpectations` method call anymore).
@@ -89,7 +89,7 @@ The constructor sets up common functionalities automatically
 - The `AssertExpectations` method is registered to be called at the end of the tests via `t.Cleanup()` method.
 - The testing.TB interface is registered on the `mock.Mock` so that tests don't panic when a call on the mock is unexpected.
 
-### :octicons-tag-24: [`v2.10.0`](https://github.com/vektra/mockery/pull/396): Expecter Structs
+### :octicons-tag-24: [`v2.10.0`](https://github.com/rhzs/mockery/pull/396): Expecter Structs
 
 Mockery now supports an "expecter" struct, which allows your tests to use type-safe methods to generate call expectations. When enabled through the `with-expecter: True` mockery configuration, you can enter into the expecter interface by simply calling `.EXPECT()` on your mock object.
 
@@ -111,7 +111,7 @@ requesterMock.EXPECT().
 	Call.Return(func(path string) string { return "result for " + path }, nil)
 ```
 
-### :octicons-tag-24: [`v2.0.0`](https://github.com/vektra/mockery/releases/tag/v2.0.0): Major Update
+### :octicons-tag-24: [`v2.0.0`](https://github.com/rhzs/mockery/releases/tag/v2.0.0): Major Update
 
 This is the first major update of mockery. Version 2 brings a handful of improvements to mockery:
 

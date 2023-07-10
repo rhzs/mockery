@@ -1,5 +1,5 @@
 #!/bin/bash
-# This tests https://github.com/vektra/mockery/issues/632, where
+# This tests https://github.com/rhzs/mockery/issues/632, where
 # mockery was generating mocks of its own auto-generated code.
 
 echo "=========="

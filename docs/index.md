@@ -49,7 +49,7 @@ $ go generate
 05 Mar 23 21:49 CST INF Starting mockery dry-run=false version=v2.20.0
 05 Mar 23 21:49 CST INF Using config: .mockery.yaml dry-run=false version=v2.20.0
 05 Mar 23 21:49 CST INF Walking dry-run=false version=v2.20.0
-05 Mar 23 21:49 CST INF Generating mock dry-run=false interface=DB qualified-name=github.com/vektra/mockery/v2/pkg/fixtures/example_project version=v2.20.0
+05 Mar 23 21:49 CST INF Generating mock dry-run=false interface=DB qualified-name=github.com/rhzs/mockery/v2/pkg/fixtures/example_project version=v2.20.0
 ```
 
 We can then use the mock object in a test:

@@ -7,7 +7,7 @@ builds:
   - main: ./main.go
     binary: mockery
     ldflags:
-      - -s -w -X github.com/vektra/mockery/v2/pkg/logging.SemVer=v{{.Version}}
+      - -s -w -X github.com/rhzs/mockery/v2/pkg/logging.SemVer=v{{.Version}}
     env:
       - CGO_ENABLED=0
     goos:
@@ -33,7 +33,7 @@ snapshot:
 changelog:
     sort: asc
 dockers:
-  - image_templates: ["vektra/mockery:{{ .Tag }}-amd64"]
+  - image_templates: ["rhzs/mockery:{{ .Tag }}-amd64"]
     goarch: amd64
     dockerfile: Dockerfile
     use: buildx
@@ -45,7 +45,7 @@ dockers:
       - "--label=org.opencontainers.image.version={{.Version}}"
       - "--label=org.opencontainers.image.source={{.GitURL}}"
       - "--platform=linux/amd64"
-  - image_templates: ["vektra/mockery:{{ .Tag }}-arm64"]
+  - image_templates: ["rhzs/mockery:{{ .Tag }}-arm64"]
     goarch: arm64
     dockerfile: Dockerfile
     use: buildx
@@ -58,27 +58,27 @@ dockers:
       - "--label=org.opencontainers.image.source={{.GitURL}}"
       - "--platform=linux/arm64"
 docker_manifests:
-  - name_template: vektra/mockery:{{ .Tag }}
+  - name_template: rhzs/mockery:{{ .Tag }}
     image_templates:
-      - vektra/mockery:{{ .Tag }}-amd64
-      - vektra/mockery:{{ .Tag }}-arm64
-  - name_template: vektra/mockery:v{{ .Major }}
+      - rhzs/mockery:{{ .Tag }}-amd64
+      - rhzs/mockery:{{ .Tag }}-arm64
+  - name_template: rhzs/mockery:v{{ .Major }}
     image_templates:
-      - vektra/mockery:{{ .Tag }}-amd64
-      - vektra/mockery:{{ .Tag }}-arm64
-  - name_template: vektra/mockery:v{{ .Major }}.{{ .Minor }}
+      - rhzs/mockery:{{ .Tag }}-amd64
+      - rhzs/mockery:{{ .Tag }}-arm64
+  - name_template: rhzs/mockery:v{{ .Major }}.{{ .Minor }}
     image_templates:
-      - vektra/mockery:{{ .Tag }}-amd64
-      - vektra/mockery:{{ .Tag }}-arm64
-  - name_template: vektra/mockery:latest
+      - rhzs/mockery:{{ .Tag }}-amd64
+      - rhzs/mockery:{{ .Tag }}-arm64
+  - name_template: rhzs/mockery:latest
     image_templates:
-      - vektra/mockery:{{ .Tag }}-amd64
-      - vektra/mockery:{{ .Tag }}-arm64
+      - rhzs/mockery:{{ .Tag }}-amd64
+      - rhzs/mockery:{{ .Tag }}-arm64
 brews:
-  - homepage: https://github.com/vektra/mockery
+  - homepage: https://github.com/rhzs/mockery
     description: "A mock code autogenerator for Go"
     tap:
-        owner: vektra
+        owner: rhzs
         name: homebrew-tap
         token: "{{ .Env.HOMEBREW_TAP_TOKEN }}"
     folder: Formula

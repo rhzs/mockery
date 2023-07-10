@@ -1,10 +1,10 @@
 site_name: mockery
-site_url: https://vektra.github.io/mockery/
+site_url: https://rhzs.github.io/mockery/
 site_description: >-
   Create mock implementations of your Golang interfaces using mockery and testify.
 
-repo_name: vektra/mockery
-repo_url: https://github.com/vektra/mockery
+repo_name: rhzs/mockery
+repo_url: https://github.com/rhzs/mockery
 
 theme:
   name: material

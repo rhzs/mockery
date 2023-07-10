@@ -8,11 +8,11 @@ Installation
 
 <small>recommended</small>
 
-Visit the [releases page](https://github.com/vektra/mockery/releases) to download one of the pre-built binaries for your platform.
+Visit the [releases page](https://github.com/rhzs/mockery/releases) to download one of the pre-built binaries for your platform.
 
 ### go install
 
-Supported, but not recommended: [see wiki page](https://github.com/vektra/mockery/wiki/Installation-Methods#go-install) and [related discussions](https://github.com/vektra/mockery/pull/456).
+Supported, but not recommended: [see wiki page](https://github.com/rhzs/mockery/wiki/Installation-Methods#go-install) and [related discussions](https://github.com/rhzs/mockery/pull/456).
 
 <div id="mockery-install-go-command"></div>
 
@@ -22,13 +22,13 @@ Supported, but not recommended: [see wiki page](https://github.com/vektra/mocker
 
 ### Docker
 
-Use the [Docker image](https://hub.docker.com/r/vektra/mockery)
+Use the [Docker image](https://hub.docker.com/r/rhzs/mockery)
 
-    docker pull vektra/mockery
+    docker pull rhzs/mockery
 
 Generate all the mocks for your project:
 
-	docker run -v "$PWD":/src -w /src vektra/mockery --all
+	docker run -v "$PWD":/src -w /src rhzs/mockery --all
 
 ### Homebrew
 
@@ -43,14 +43,14 @@ Install through [brew](https://brew.sh/)
 function insert_installation_command(element_to_override,version){
     element_to_override.innerHTML=`
 ```
-go install github.com/vektra/mockery/v2@${version}
+go install github.com/rhzs/mockery/v2@${version}
 ```
 `;
 }
 
 const version_key="/mockery/version";
 const element = document.getElementById('mockery-install-go-command');
-const url = `https://api.github.com/repos/vektra/mockery/releases/latest`;
+const url = `https://api.github.com/repos/rhzs/mockery/releases/latest`;
 
 let version = sessionStorage.getItem(version_key);
 if (version !== null) {
@@ -68,7 +68,7 @@ if (version !== null) {
     })
     .catch((error) =>{
           console.error(error);
-          element.innerHTML=`failed to fetch latest release info from: https://api.github.com/repos/vektra/mockery/releases/latest`;
+          element.innerHTML=`failed to fetch latest release info from: https://api.github.com/repos/rhzs/mockery/releases/latest`;
     }
   );
 }

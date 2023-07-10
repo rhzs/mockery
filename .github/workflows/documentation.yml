@@ -21,8 +21,8 @@ jobs:
       - run: pip install -r docs/requirements.txt
       - name: Setup doc deploy
         run: |
-          git config --global user.name vektra-bot
-          git config --global user.email vektra-bot@vektra.github.io
+          git config --global user.name rhzs-bot
+          git config --global user.email rhzs-bot@rhzs.github.io
           git fetch origin gh-pages --depth=1
       - name: Deploy docs
         run: "mike deploy --push --update-aliases $(echo ${{ github.ref_name }} | cut -d'.' -f1-2 ) latest"

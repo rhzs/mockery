@@ -1,4 +1,4 @@
-module github.com/vektra/mockery/tools
+module github.com/rhzs/mockery/tools
 
 go 1.19
 

@@ -18,11 +18,11 @@ The format of the parameter is:
 For example:
 
 ```shell
-mockery --replace-type github.com/vektra/mockery/v2/baz/internal/foo.InternalBaz=baz:github.com/vektra/mockery/v2/baz.Baz
+mockery --replace-type github.com/rhzs/mockery/v2/baz/internal/foo.InternalBaz=baz:github.com/rhzs/mockery/v2/baz.Baz
 ```
 
-This will replace any imported named `"github.com/vektra/mockery/v2/baz/internal/foo"`
-with `baz "github.com/vektra/mockery/v2/baz"`. The alias is defined with `:` before
+This will replace any imported named `"github.com/rhzs/mockery/v2/baz/internal/foo"`
+with `baz "github.com/rhzs/mockery/v2/baz"`. The alias is defined with `:` before
 the package name. Also, the `InternalBaz` type that comes from this package will be renamed to `baz.Baz`.
 
 This next example fixes a common problem of type aliases that point to an internal package.
@@ -113,7 +113,7 @@ Here is an example configuration set:
 ```yaml
 with-expecter: True
 packages:
-  github.com/vektra/mockery/v2/pkg: # (1)!
+  github.com/rhzs/mockery/v2/pkg: # (1)!
     interfaces:
       TypesPackage:
       RequesterVariadic:

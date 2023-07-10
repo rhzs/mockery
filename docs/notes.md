@@ -8,12 +8,12 @@ When using the `packages` feature, `recursive: true` and you have specified a pa
 
 The solution is to create a `.go` file in the package's path and add a `package [name]` directive at the top. It doesn't matter what the file is called. This allows mockery to properly read package metadata.
 
-[Discussion](https://github.com/vektra/mockery/discussions/636)
+[Discussion](https://github.com/rhzs/mockery/discussions/636)
 
 internal error: package without types was imported
 ---------------------------------------------------
 
-[https://github.com/vektra/mockery/issues/475](https://github.com/vektra/mockery/issues/475)
+[https://github.com/rhzs/mockery/issues/475](https://github.com/rhzs/mockery/issues/475)
 
 This issue indicates an incompatibility that exists with one of your cached Golang packages. The solution is to run `go clean -modcache`.
 
@@ -73,7 +73,7 @@ However, what we've given to mockery is ambiguous because it is impossible to di
 1. Any number of variadic arguments of any value
 2. A single variadic argument of any value
 
-This is fixed in [#359](https://github.com/vektra/mockery/pull/359) where you can provide `unroll-variadic: False` to get back to the old behavior. Thus, if you want to assert (1), you can then do:
+This is fixed in [#359](https://github.com/rhzs/mockery/pull/359) where you can provide `unroll-variadic: False` to get back to the old behavior. Thus, if you want to assert (1), you can then do:
 
 ```go
 m.On("Bar", mock.Anything).Return(nil)
@@ -98,10 +98,10 @@ m.On("Bar", []interface{}{mock.Anything}).Return(nil)
 
 References:
 
-- [https://github.com/vektra/mockery/pull/359](https://github.com/vektra/mockery/pull/359)
-- [https://github.com/vektra/mockery/pull/123](https://github.com/vektra/mockery/pull/123)
-- [https://github.com/vektra/mockery/pull/550](https://github.com/vektra/mockery/pull/550)
-- [https://github.com/vektra/mockery/issues/541](https://github.com/vektra/mockery/issues/541)
+- [https://github.com/rhzs/mockery/pull/359](https://github.com/rhzs/mockery/pull/359)
+- [https://github.com/rhzs/mockery/pull/123](https://github.com/rhzs/mockery/pull/123)
+- [https://github.com/rhzs/mockery/pull/550](https://github.com/rhzs/mockery/pull/550)
+- [https://github.com/rhzs/mockery/issues/541](https://github.com/rhzs/mockery/issues/541)
 
 Semantic Versioning
 -------------------
@@ -115,7 +115,7 @@ The versioning in this project applies only to the behavior of the mockery binar
 
 What the version does _not_ track:
 
-1. The interfaces, objects, methods etc. in the vektra/mockery package.
+1. The interfaces, objects, methods etc. in the rhzs/mockery package.
 2. Compatibility of `go get`-ing mockery with new or old versions of Golang.
 
 Mocking interfaces in `main`
@@ -127,7 +127,7 @@ This will generate mocks in the same package as the target code, avoiding import
 mockery fails to run when `MOCKERY_VERSION` environment variable is set
 ------------------------------------------------------------------------
 
-This issue was first highlighted [in this GitHub issue](https://github.com/vektra/mockery/issues/391).
+This issue was first highlighted [in this GitHub issue](https://github.com/rhzs/mockery/issues/391).
 
 mockery uses the viper package for configuration mapping and parsing. Viper is set to automatically search for all config variables specified in its config struct. One of the config variables is named `version`, which gets mapped to an environment variable called `MOCKERY_VERSION`. If you set this environment variable, mockery attempts to parse it into the `version` bool config.
 
