@@ -3,8 +3,8 @@ package same_name_arg_and_type
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/mock"
+	"gitlab.com/incubus8/gotest/assert"
+	"gitlab.com/incubus8/gotest/mock"
 )
 
 type testStruct struct {
@@ -66,5 +66,4 @@ func Test(t *testing.T) {
 
 		mockInterfaceA.AssertExpectations(t)
 	})
-
 }

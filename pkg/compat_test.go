@@ -3,12 +3,12 @@ package pkg
 import (
 	"testing"
 
-	"github.com/stretchr/testify/mock"
-	"github.com/stretchr/testify/suite"
 	mocks "github.com/vektra/mockery/v2/mocks/github.com/vektra/mockery/v2/pkg/fixtures"
+	"gitlab.com/incubus8/gotest/mock"
+	"gitlab.com/incubus8/gotest/suite"
 )
 
-// CompatSuite covers compatibility with github.com/stretchr/testify/mock.
+// CompatSuite covers compatibility with gitlab.com/incubus8/gotest/mock.
 type CompatSuite struct {
 	suite.Suite
 }

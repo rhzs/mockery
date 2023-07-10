@@ -2,7 +2,7 @@ Examples
 ========
 
 !!! tip
-	IDEs are really useful when interacting with mockery objects. All mockery objects embed the [`github.com/stretchr/testify/mock.Mock`](https://pkg.go.dev/github.com/stretchr/testify/mock#Mock) object so you have access to both methods provided by mockery, and from testify itself. IDE auto-completion will show you all methods available for your use.
+	IDEs are really useful when interacting with mockery objects. All mockery objects embed the [`gitlab.com/incubus8/gotest/mock.Mock`](https://pkg.go.dev/gitlab.com/incubus8/gotest/mock#Mock) object so you have access to both methods provided by mockery, and from testify itself. IDE auto-completion will show you all methods available for your use.
 
 ### Simple case
 
@@ -24,7 +24,7 @@ package example_project
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	"gitlab.com/incubus8/gotest/assert"
 )
 
 func Foo(s Stringer) string {
@@ -42,7 +42,7 @@ Note that in combination with using the mock's constructor and the [`.EXPECT()`]
 
 ??? tip "Alternate way of specifying expectations"
 
-	You can also use the `github.com/stretchr/testify/mock.Mock` object directly (instead of using the `.EXPECT()` methods, which provide type-safe-ish assertions).
+	You can also use the `gitlab.com/incubus8/gotest/mock.Mock` object directly (instead of using the `.EXPECT()` methods, which provide type-safe-ish assertions).
 
 	```go title="string_test.go"
 	func TestString(t *testing.T) {
@@ -73,7 +73,7 @@ Run: `mockery --name=SendFunc` and the following will be output:
 package mocks
 
 import (
-	"github.com/stretchr/testify/mock"
+	"gitlab.com/incubus8/gotest/mock"
 
 	testing "testing"
 )
@@ -130,7 +130,7 @@ type Proxy interface {
 The argument can be passed through as the return value:
 
 ```go
-import . "github.com/stretchr/testify/mock"
+import . "gitlab.com/incubus8/gotest/mock"
 
 proxyMock := mocks.NewProxy(t)
 proxyMock.On("passthrough", mock.AnythingOfType("context.Context"), mock.AnythingOfType("string")).

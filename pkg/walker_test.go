@@ -8,8 +8,8 @@ import (
 	"regexp"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
 	"github.com/vektra/mockery/v2/pkg/config"
+	"gitlab.com/incubus8/gotest/assert"
 )
 
 type GatheringVisitor struct {
@@ -136,7 +136,8 @@ func TestWalkerExclude(t *testing.T) {
 		Config: config.Config{
 			Exclude: []string{
 				getFixturePath("requester"),
-				getFixturePath("generic.go")},
+				getFixturePath("generic.go"),
+			},
 		},
 		Filter: regexp.MustCompile(".*"),
 	}

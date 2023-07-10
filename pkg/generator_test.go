@@ -11,10 +11,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/mock"
-	"github.com/stretchr/testify/suite"
 	mocks "github.com/vektra/mockery/v2/mocks/github.com/vektra/mockery/v2/pkg/fixtures"
+	"gitlab.com/incubus8/gotest/assert"
+	"gitlab.com/incubus8/gotest/mock"
+	"gitlab.com/incubus8/gotest/suite"
 )
 
 const pkg = "test"
@@ -219,7 +219,7 @@ func (s *GeneratorSuite) TestGeneratorPrologue() {
 	generator := s.getGenerator(testFile, "Requester", false, "")
 	expected := `package mocks
 
-import mock "github.com/stretchr/testify/mock"
+import mock "gitlab.com/incubus8/gotest/mock"
 import test "github.com/vektra/mockery/v2/pkg/fixtures"
 
 `
@@ -231,7 +231,7 @@ func (s *GeneratorSuite) TestGeneratorPrologueWithImports() {
 	expected := `package mocks
 
 import http "net/http"
-import mock "github.com/stretchr/testify/mock"
+import mock "gitlab.com/incubus8/gotest/mock"
 import test "github.com/vektra/mockery/v2/pkg/fixtures"
 
 `
@@ -245,7 +245,7 @@ func (s *GeneratorSuite) TestGeneratorPrologueWithMultipleImportsSameName() {
 
 import fixtureshttp "github.com/vektra/mockery/v2/pkg/fixtures/http"
 import http "net/http"
-import mock "github.com/stretchr/testify/mock"
+import mock "gitlab.com/incubus8/gotest/mock"
 import test "github.com/vektra/mockery/v2/pkg/fixtures"
 
 `
@@ -549,7 +549,7 @@ func (s *GeneratorSuite) TestPrologueWithImportSameAsLocalPackage() {
 	expected := `package mocks
 
 import fixtures "` + generator.iface.QualifiedName + `"
-import mock "github.com/stretchr/testify/mock"
+import mock "gitlab.com/incubus8/gotest/mock"
 import test "github.com/vektra/mockery/v2/pkg/fixtures/redefined_type_b"
 
 `
@@ -564,7 +564,7 @@ func (s *GeneratorSuite) TestPrologueWithImportFromNestedInterface() {
 
 import fixtureshttp "github.com/vektra/mockery/v2/pkg/fixtures/http"
 import http "net/http"
-import mock "github.com/stretchr/testify/mock"
+import mock "gitlab.com/incubus8/gotest/mock"
 import test "github.com/vektra/mockery/v2/pkg/fixtures"
 
 `
@@ -608,13 +608,13 @@ func (s *GeneratorSuite) TestKeepTreeInPackageCombined() {
 
 import fixturesexample_project "github.com/vektra/mockery/v2/pkg/fixtures/example_project"
 import foo "github.com/vektra/mockery/v2/pkg/fixtures/example_project/foo"
-import mock "github.com/stretchr/testify/mock"
+import mock "gitlab.com/incubus8/gotest/mock"
 
 `},
 		{path: filepath.Join("example_project", "foo", "foo.go"), name: "Foo", expected: `package foo
 
 import example_projectfoo "github.com/vektra/mockery/v2/pkg/fixtures/example_project/foo"
-import mock "github.com/stretchr/testify/mock"
+import mock "gitlab.com/incubus8/gotest/mock"
 
 `},
 	}
@@ -634,7 +634,7 @@ func (s *GeneratorSuite) TestInPackagePackageCollision() {
 	expected := `package foo
 
 import barfoo "github.com/vektra/mockery/v2/pkg/fixtures/example_project/bar/foo"
-import mock "github.com/stretchr/testify/mock"
+import mock "gitlab.com/incubus8/gotest/mock"
 
 `
 	generator := NewGenerator(
@@ -650,7 +650,7 @@ func (s *GeneratorSuite) TestImportCollideWithStdLib() {
 	expected := `package context
 
 import context2 "context"
-import mock "github.com/stretchr/testify/mock"
+import mock "gitlab.com/incubus8/gotest/mock"
 
 `
 	generator := NewGenerator(
@@ -666,7 +666,7 @@ func (s *GeneratorSuite) TestReplaceTypePackagePrologue() {
 	expected := `package mocks
 
 import baz "github.com/vektra/mockery/v2/pkg/fixtures/example_project/baz"
-import mock "github.com/stretchr/testify/mock"
+import mock "gitlab.com/incubus8/gotest/mock"
 
 `
 	generator := NewGenerator(

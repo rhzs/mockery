@@ -8,8 +8,8 @@ import (
 
 	"github.com/chigopher/pathlib"
 	"github.com/spf13/viper"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
+	"gitlab.com/incubus8/gotest/assert"
+	"gitlab.com/incubus8/gotest/require"
 )
 
 func TestNewRootCmd(t *testing.T) {
@@ -157,7 +157,7 @@ packages:
     interfaces:
       FooInterface:
 `
-	//config := fmt.Sprintf(configFmt, tmpDir)
+	// config := fmt.Sprintf(configFmt, tmpDir)
 	configPath := pathlib.NewPath(tmpDir).Join("config.yaml")
 	require.NoError(t, configPath.WriteFile([]byte(config)))
 

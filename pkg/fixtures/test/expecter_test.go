@@ -5,10 +5,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/mock"
-	"github.com/stretchr/testify/require"
 	mocks "github.com/vektra/mockery/v2/mocks/github.com/vektra/mockery/v2/pkg/fixtures"
+	"gitlab.com/incubus8/gotest/assert"
+	"gitlab.com/incubus8/gotest/mock"
+	"gitlab.com/incubus8/gotest/require"
 )
 
 var (
@@ -178,7 +178,6 @@ func TestExpecter(t *testing.T) {
 		require.Equal(t, runCalled, 5)
 		expMock.AssertExpectations(t)
 	})
-
 }
 
 func intfSlice(slice interface{}) []interface{} {

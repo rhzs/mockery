@@ -102,7 +102,7 @@ func NewGenerator(ctx context.Context, c GeneratorConfig, iface *Interface, pkg 
 	}
 
 	g.parseReplaceTypes(ctx)
-	g.addPackageImportWithName(ctx, "github.com/stretchr/testify/mock", "mock")
+	g.addPackageImportWithName(ctx, "gitlab.com/incubus8/gotest/mock", "mock")
 
 	return g
 }
@@ -969,7 +969,7 @@ func (g *Generator) generateCalled(list *paramList) (preamble string, called str
 	// the variadic argument. But the alternative is less accessible because it requires
 	// building a []interface{} before calling Mock methods like On and AssertCalled for
 	// the variadic argument, and creates incompatibility issues with the diff algorithm
-	// in github.com/stretchr/testify/mock.
+	// in gitlab.com/incubus8/gotest/mock.
 	//
 	// This mirroring will allow argument lists for methods like On and AssertCalled to
 	// always resemble the expected calls they describe and retain compatibility.

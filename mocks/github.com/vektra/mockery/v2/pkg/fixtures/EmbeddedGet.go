@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	mock "github.com/stretchr/testify/mock"
+	mock "gitlab.com/incubus8/gotest/mock"
 	constraints "github.com/vektra/mockery/v2/pkg/fixtures/constraints"
 )
 

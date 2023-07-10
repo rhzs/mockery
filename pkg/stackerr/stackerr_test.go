@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	"gitlab.com/incubus8/gotest/assert"
 )
 
 func TestStackErr(t *testing.T) {

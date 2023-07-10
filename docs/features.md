@@ -64,7 +64,7 @@ Invalid mock generated without this parameter (points to an `internal` folder):
 
 ```go
 import (
-    mock "github.com/stretchr/testify/mock"
+    mock "gitlab.com/incubus8/gotest/mock"
 
     pubsub "cloud.google.com/go/internal/pubsub"
 )
@@ -79,7 +79,7 @@ Correct mock generated with this parameter.
 
 ```go
 import (
-    mock "github.com/stretchr/testify/mock"
+    mock "gitlab.com/incubus8/gotest/mock"
 
     pubsub "cloud.google.com/go/pubsub"
 )

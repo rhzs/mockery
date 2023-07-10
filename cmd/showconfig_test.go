@@ -6,7 +6,7 @@ import (
 
 	"github.com/chigopher/pathlib"
 	"github.com/spf13/viper"
-	"github.com/stretchr/testify/assert"
+	"gitlab.com/incubus8/gotest/assert"
 )
 
 func TestNewShowConfigCmd(t *testing.T) {

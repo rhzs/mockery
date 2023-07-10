@@ -85,7 +85,7 @@ If you want to assert (2), you must set `unroll-variadic: True`. Then this asser
 m.On("Bar", mock.Anything).Return(nil)
 ```
 
-An upstream patch to `testify` is currently underway to allow passing `mock.Anything` directly to the variadic slice: [https://github.com/stretchr/testify/pull/1348](https://github.com/stretchr/testify/pull/1348)
+An upstream patch to `testify` is currently underway to allow passing `mock.Anything` directly to the variadic slice: [https://gitlab.com/incubus8/gotest/pull/1348](https://gitlab.com/incubus8/gotest/pull/1348)
 
 If this is merged, it would become possible to describe the above two cases respectively:
 

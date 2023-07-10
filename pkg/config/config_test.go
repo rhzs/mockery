@@ -9,9 +9,9 @@ import (
 
 	"github.com/chigopher/pathlib"
 	"github.com/spf13/viper"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 	"github.com/vektra/mockery/v2/pkg/logging"
+	"gitlab.com/incubus8/gotest/assert"
+	"gitlab.com/incubus8/gotest/require"
 	"gopkg.in/yaml.v3"
 )
 
@@ -979,7 +979,6 @@ want
 ------
 %v`, string(cfgAsStr), tt.wantCfgMap)
 			}
-
 		})
 	}
 }

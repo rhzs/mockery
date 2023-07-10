@@ -10,11 +10,11 @@ import (
 
 	"github.com/chigopher/pathlib"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 	pkgMocks "github.com/vektra/mockery/v2/mocks/github.com/vektra/mockery/v2/pkg"
 	"github.com/vektra/mockery/v2/pkg/config"
 	"github.com/vektra/mockery/v2/pkg/logging"
+	"gitlab.com/incubus8/gotest/assert"
+	"gitlab.com/incubus8/gotest/require"
 )
 
 func TestFilenameBare(t *testing.T) {

@@ -1,7 +1,7 @@
 mockery
 ========
 
-Mockery is a project that creates mock implementations of Golang interfaces. The mocks generated in this project are based off of the [github.com/stretchr/testify](https://github.com/stretchr/testify) suite of testing packages.
+Mockery is a project that creates mock implementations of Golang interfaces. The mocks generated in this project are based off of the [gitlab.com/incubus8/gotest](https://gitlab.com/incubus8/gotest) suite of testing packages.
 
 ![](assets/images/demo.gif)
 ![](assets/images/MockScreenshot.png)
@@ -58,7 +58,7 @@ We can then use the mock object in a test:
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	"gitlab.com/incubus8/gotest/assert"
 )
 
 func Test_getFromDB(t *testing.T) {

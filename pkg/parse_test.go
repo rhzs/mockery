@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
+	"gitlab.com/incubus8/gotest/assert"
+	"gitlab.com/incubus8/gotest/require"
 )
 
 var ctx = context.Background()
@@ -95,5 +95,4 @@ func TestParsePackages(t *testing.T) {
 	parser := NewParser([]string{})
 	require.NoError(t, parser.ParsePackages(context.Background(), []string{"github.com/vektra/mockery/v2/pkg/fixtures"}))
 	assert.NotEqual(t, 0, len(parser.entries))
-
 }

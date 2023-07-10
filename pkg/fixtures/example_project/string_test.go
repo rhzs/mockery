@@ -3,7 +3,7 @@ package example_project
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	"gitlab.com/incubus8/gotest/assert"
 )
 
 func Foo(s Stringer) string {

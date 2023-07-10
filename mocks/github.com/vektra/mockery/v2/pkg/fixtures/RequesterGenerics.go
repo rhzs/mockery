@@ -7,7 +7,7 @@ import (
 
 	constraints "github.com/vektra/mockery/v2/pkg/fixtures/constraints"
 
-	mock "github.com/stretchr/testify/mock"
+	mock "gitlab.com/incubus8/gotest/mock"
 
 	test "github.com/vektra/mockery/v2/pkg/fixtures"
 )

@@ -117,7 +117,7 @@ Using different configuration parameters, we can deploy our mocks on-disk in var
         ```go
         package pkgName
 
-        import mock "github.com/stretchr/testify/mock"
+        import mock "gitlab.com/incubus8/gotest/mock"
 
         type MockMyDatabase struct {
           mock.Mock
@@ -170,7 +170,7 @@ Using different configuration parameters, we can deploy our mocks on-disk in var
         ```go
         package pkgName
 
-        import mock "github.com/stretchr/testify/mock"
+        import mock "gitlab.com/incubus8/gotest/mock"
 
         type MockMyDatabase struct {
           mock.Mock
